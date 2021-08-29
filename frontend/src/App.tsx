@@ -1,12 +1,25 @@
 import React from 'react';
 
-function App() {
-  return (
-    <>
-    <h1>Portal de vagas</h1>
-    <p>Cadastre-se</p>
-    </>
-  );
-}
+import { Route, Switch } from 'react-router-dom';
 
-export default App;
+// We will create these two pages in a moment
+
+import HomePage from './pages/homepage';
+
+import JobPage from './pages/jobpage';
+
+export default function App() {
+
+  return (
+
+    <Switch>
+
+      <Route exact path="/" component={HomePage} />
+
+      <Route path="/:id" component={JobPage} />
+
+    </Switch>
+
+  )
+
+}
