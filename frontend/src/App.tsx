@@ -1,6 +1,9 @@
 import React from 'react';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import { Route, Switch } from 'react-router-dom';
+import NavBar from "./components/navbar"
+
 
 // We will create these two pages in a moment
 
@@ -11,15 +14,15 @@ import JobPage from './pages/jobpage';
 export default function App() {
 
   return (
-
+    <>
+    <NavBar/>
     <Switch>
-
       <Route exact path="/" component={HomePage} />
 
-      <Route path="/:id" component={JobPage} />
+      <Route path="/joboffer/:id" component={JobPage} />
 
     </Switch>
-
+  </>
   )
 
 }
