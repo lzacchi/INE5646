@@ -10,6 +10,7 @@ import NavBar from "./components/navbar"
 import HomePage from './pages/homepage';
 
 import JobPage from './pages/jobpage';
+import LoginPage from './pages/loginpage';
 
 export default function App() {
 
@@ -18,6 +19,8 @@ export default function App() {
     <NavBar/>
     <Switch>
       <Route exact path="/" component={HomePage} />
+      
+      <Route exact path="/login" component={LoginPage} />
 
       <Route path="/joboffer/:id" component={JobPage} />
 
