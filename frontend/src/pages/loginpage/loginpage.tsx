@@ -200,7 +200,7 @@ export default function LoginPage(props) {
                 <Field
                   className="default-input login-input"
                   name="confirmPassword"
-                  type="confirmPassword"
+                  type="password"
                   placeholder="********"
                 />
                 <br />
