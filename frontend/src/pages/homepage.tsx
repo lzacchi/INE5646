@@ -30,7 +30,6 @@ export default function HomePage() {
 
   const jobListResponse = getAllJobsOffers();
   const [jobList, setJobList] = useState<jobDataType[]>(jobListResponse || []);
-  const searchJobBar = <></>;
   const contentHeader = <>
     <Row style={{textAlign: "center"}}>
       <Col>
