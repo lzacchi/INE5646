@@ -1,0 +1,13 @@
+.searchNavbar {
+    margin: 3rem 0 !important;
+    background-color: #A0BCF8;
+    justify-content: center !important
+}
+
+.contentHeader {
+    text-align: center;
+}
+
+.contentHeader button {
+    margin: 0 0.5rem !important;
+}

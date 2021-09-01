@@ -1,24 +1,28 @@
 import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import { Route, Switch } from 'react-router-dom';
-import NavBar from "./components/navbar"
+import { Route, Switch, useLocation } from 'react-router-dom';
+import NavBar from "./components/navbar/navbar"
 
-import HomePage from './pages/homepage';
-import LoginPage from './pages/loginpage';
+import HomePage from './pages/homepage/homepage';
+import LoginPage from './pages/loginpage/loginpage';
 
 // importing pages components
-import JobPage from './pages/jobpage';
-import AdvertisePage  from './pages/advertisepage';
-import Contact from './pages/contact';
-import FAQ from './pages/faq';
-import OurTeam from "./pages/ourteam";
+import JobPage from './pages/jobpage/jobpage';
+import AdvertisePage  from './pages/advertisepage/advertisepage';
+import Contact from './pages/contact/contact';
+import FAQ from './pages/faq/faq';
+import OurTeam from "./pages/ourteam/ourteam";
+
 
 export default function App() {
+  const location = useLocation();
 
   return (
     <>
-    <NavBar/>
+    {/* Hide navbar in login page */}
+    {location.pathname != "/login" &&
+      <NavBar/>}
     <Switch>
       <Route exact path="/" component={HomePage} />
       <Route exact path="/login" component={LoginPage} />

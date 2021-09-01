@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Button, Col, Row } from "react-bootstrap";
-import { jobDataType } from "../models/types";
-import { FcShare } from "react-icons/fc"
+import { jobDataType } from "../../models/types";
+import { FcShare } from "react-icons/fc";
+import styles from "./style.module.css";
 
 export default function JobCard(props): JSX.Element {
   const jobData: jobDataType = props.jobData;
@@ -12,16 +13,23 @@ export default function JobCard(props): JSX.Element {
   }
 
   return (
-    <Card className="align-items-stretch">
-      <Card.Subtitle className="m-2 mb-0 text-muted">{jobData.jobTags.join(", ")}</Card.Subtitle>
-      <Card.Body style={{ minHeight: "250px" }}>
-        <Card.Title style={{ fontWeight: "bolder" }}>{jobData.jobTitle}</Card.Title>
-        <Card.Text style={{ fontWeight: "lighter", fontSize: "0.8rem" }}>{handleMultilineString(jobData.jobDescription)}
+    <Card className={`${styles['jobCardWrapper']}`}>
+      <Card.Subtitle className={`${styles['cardSubtitle']}`}>{jobData.jobTags.join(", ")}</Card.Subtitle>
+
+      <Card.Body className={`${styles['card-body']}`} >
+        <Card.Title className={`${styles['card-title']}`} >
+          {jobData.jobTitle}
+        </Card.Title>
+
+        <Card.Text className={`${styles['card-text']}`} >
+          {handleMultilineString(jobData.jobDescription)}
         </Card.Text>
-        <div className="text-center">
+
+        <div className={`${styles['card-center-info']}`}>
           <Button variant="outline-primary" href={`/joboffer/${jobData.jobId}`}>Quero me inscrever!</Button>
         </div>
       </Card.Body>
+
       <Card.Footer >
         <Row>
           <Col xs={10}>

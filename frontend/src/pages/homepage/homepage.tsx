@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Button, Col, Navbar, Row } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import JobCard from "../components/jobcard";
-import { getAllJobsOffers } from "../services/api";
-import { jobDataType } from "./../models/types";
-import Footer from "../components/footer";
+import JobCard from "./../../components/jobcard/jobcard";
+import { getAllJobsOffers } from "../../services/api";
+import { jobDataType } from "../../models/types";
+import Footer from "../../components/footer/footer";
+import styles from "./style.module.css";
 
 export default function HomePage() {
   const responsive = {
@@ -31,13 +32,13 @@ export default function HomePage() {
   const jobListResponse = getAllJobsOffers();
   const [jobList, setJobList] = useState<jobDataType[]>(jobListResponse || []);
   const contentHeader = <>
-    <Row style={{textAlign: "center"}}>
+    <Row className={`${styles['contentHeader']}`}>
       <Col>
       <h1>Encontre o emprego dos sonhos</h1>
       <p>Inúmeras áreas para você explorar no mercado de trabalho.</p>
       <div>
-        <Button className="mx-2">Crie seu perfil</Button>
-        <Button className="mx-2">Anuncie sua vaga</Button>
+        <Button >Crie seu perfil</Button>
+        <Button >Anuncie sua vaga</Button>
       </div>
       </Col>
     </Row>
@@ -58,7 +59,7 @@ export default function HomePage() {
   return (
     <div id="homepage-wrapper" className="my-4">
       {contentHeader}
-      <Navbar className="my-5 justify-content-center" expand="lg" variant="dark" style={{backgroundColor: "#A0BCF8"}}>
+      <Navbar className={`${styles['searchNavbar']}`} expand="lg" variant="dark">
         <input  type="text" placeholder="Descrição da vaga" />
         <input  type="text" placeholder="Cidade" />
         <Button size="sm">Buscar</Button>
