@@ -1,7 +1,11 @@
 .searchNavbar {
-    margin: 3rem 0 !important;
+    margin-top: 3rem !important;
+    margin-bottom: 0  !important;
+    margin-left: 0  !important;
+    margin-right: 0  !important;
     background-color: #A0BCF8;
-    justify-content: center !important
+    justify-content: center !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .contentHeader {
@@ -10,4 +14,10 @@
 
 .contentHeader button {
     margin: 0 0.5rem !important;
+}
+
+.jobcard-carousel {
+    background-color: #F8F9FD;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }

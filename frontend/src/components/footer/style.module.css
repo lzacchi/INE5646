@@ -2,3 +2,11 @@
     font-weight: lighter;
     font-size: 0.8rem;
 }
+
+footer {
+    background-color: #ECF2FE;
+}
+footer .row {
+    padding-top: 1rem;
+    margin: 0 10%;
+}

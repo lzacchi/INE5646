@@ -44,7 +44,7 @@ export default function HomePage() {
     </Row>
   </>;
   const jobCarousel =  
-  <Carousel responsive={responsive}>
+  <Carousel className={`${styles['jobcard-carousel']}`} responsive={responsive}>
     {/* If job list is empty display some error text, else map jobs to jobCard */}
     {jobList.length <= 0 ? (
       <div><h3>Empty</h3></div>
