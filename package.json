@@ -3,11 +3,12 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1"
   },
+  "homepage":"https://lzacchi.github.io/INE5646/frontend",
   "scripts": {
     "dev": "nodemon backend/src/app.ts",
     "build": "cd frontend && react-scripts build",
     "predeploy": "cd frontend && npm run build",
-    "deploy": "cd frontend && gh-pages -d dist"
+    "deploy": "cd frontend && gh-pages -d build"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
